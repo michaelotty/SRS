@@ -31,3 +31,7 @@ class SRS:
         plt.plot(w/(2*np.pi)*fs, np.abs(h))
         plt.show()
 
+
+    def plot(self):
+        pass
+
