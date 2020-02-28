@@ -26,7 +26,7 @@ class SRS:
         den = [1, -a, -b]
 
         filt = signal.lfilter(num, den, waveform)
-        plt.plot(filt)
+        plt.loglog(filt)
 
         plt.show()
 
