@@ -7,7 +7,6 @@ class SRS:
     def __init__(self, waveform, fs, q=10, f=12):
         """Shock Response Spectrum"""
 
-        self.input = waveform
         self.fs = fs
         self.spectrum = [i for i in range(100)]
 
@@ -26,9 +25,9 @@ class SRS:
         num = [c, d, e]
         den = [1, -a, -b]
 
-        w, h = signal.freqz(num, den)
+        filt = signal.lfilter(num, den, waveform)
+        plt.plot(filt)
 
-        plt.plot(w/(2*np.pi)*fs, np.abs(h))
         plt.show()
 
 
